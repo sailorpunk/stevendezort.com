@@ -1,0 +1,505 @@
+:root {
+  --tech-green: #4e8499;
+  --tech-focus-green: #4f837f;
+  --tech-active-green: #3c6360;
+  --tech-black: #161616;
+  --tech-nav-link: rgba(255, 255, 255, 0.5);
+  --tech-nav-link-hover: rgba(255, 255, 255, 0.75);
+  --faded-white: fade(white, 80%);
+}
+
+#mainNav {
+  background-color: transparent;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 100%;
+  padding: 0.75rem;
+  color: var(--tech-green);
+  border: 1px solid var(--tech-green);
+}
+
+#mainNav .navbar-toggler:focus {
+  outline: none;
+}
+
+#mainNav .navbar-brand {
+  color: var(--tech-black);
+  font-weight: 300;
+  letter-spacing: 0.5rem;
+  /* padding: .9rem 0; */
+  font-family: 'Mulish', sans-serif;
+}
+
+#mainNav .navbar-nav .nav-item:hover {
+  color: var(--faded-white);
+  outline: none;
+  background-color: transparent;
+}
+
+#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.logo-width {
+  min-width: 180px;
+}
+
+.logo-width img {
+  max-width: 75px;
+}
+
+.masthead, .realestate, .music, .wedding {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 0rem 0;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/michael-bourgault-wV1gNxqelfk-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+
+.masthead.success {
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/michael-bourgault-wV1gNxqelfk-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.masthead.success {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.masthead h1, .music h1, .wedding h1 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 200;
+  font-size: 10rem;
+  letter-spacing: 1rem;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.602), rgba(255, 255, 255, 0.094));
+  -webkit-text-fill-color: transparent;
+  clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.realestate h1{
+  font-family: 'Mulish', sans-serif;
+  font-weight: 200;
+  font-size: 10rem;
+  letter-spacing: .6rem;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.602), rgba(255, 255, 255, 0.094));
+  -webkit-text-fill-color: transparent;
+  clip: text;
+  background-clip: text;
+  -webkit-background-clip: text; 
+}
+
+.masthead h2 {
+  max-width: 20rem;
+  font-size: 1.3rem;
+}
+
+.btn {
+  /* box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important; */
+  padding: 1.25rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  border: 0;
+  color: black;
+}
+
+.btn-primary {
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.602), rgba(255, 255, 255, 0.094));
+  /* -webkit-text-fill-color: transparent; */
+}
+
+.btn-primary:hover {
+  /* background-color: white; */
+}
+
+.btn-primary:focus {
+  background-color: var(--tech-green);
+  color: white;
+}
+
+.btn-primary:active {
+  background-color: var(--tech-green) !important;
+}
+
+/* .chevron {
+  position: absolute;
+  bottom: 0px;
+} */
+
+#chevron {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  animation: bounce 2s 3;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+  }
+  40% {
+      transform: translateX(-50%) translateY(-20px);
+  }
+  60% {
+      transform: translateX(-50%) translateY(-15px);
+  }
+}
+
+
+.services-section {
+  padding-top: 5rem;
+  padding-bottom: 7rem;
+  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+}
+
+.services-section .card,
+.success .card
+ {
+  border: 0;
+  border-bottom: 0.25rem solid var(--tech-green);
+  background-color: var(--tech-black);
+  color: var(--tech-nav-link);
+}
+
+.projects-section {
+  padding: 7rem 0;
+}
+
+.projects-section .featured-text {
+  padding: 2rem;
+}
+
+.projects-section .project-text {
+  padding: 3rem;
+  font-size: 90%;
+}
+
+/* .about-section {
+  padding: 7rem 0;
+  background: linear-gradient(to top, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+}
+
+.about-section .card {
+  border: 0;
+  border-bottom: 0.25rem solid var(--tech-green);
+  background-color: var(--tech-black);
+  color: var(--tech-nav-link);
+} */
+
+.contact-section {
+  padding: 10rem 0;
+  font-family: 'Mulish', sans-serif;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/footer2.jpg");
+  background-position: center ;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.contact-section h2 {
+  font-size: 1.25rem;
+  color: var(--faded-white);
+  font-family: 'Mulish', sans-serif;
+}
+
+.contact-section .form-inline input {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 1.25rem 2rem;
+  height: auto;
+  font-family: 'Mulish', sans-serif;
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 0;
+}
+
+.info-section {
+  padding: 5rem 5rem 0;
+}
+
+.info-section .card {
+  border: 0;
+  /* border-bottom: 0.25rem solid var(--tech-green); */
+}
+
+.info-section .card h4 {
+  font-size: 0.8rem;
+  font-family: 'Mulish', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.info-section .card hr {
+  /* border-color: var(--tech-green); */
+  border-width: 0.25rem;
+  width: 3rem;
+}
+
+/* .info-section .social {
+  margin-top: 5rem;
+}
+
+.info-section .social a {
+  text-align: center;
+  height: 3rem;
+  width: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  line-height: 3rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.info-section .social a:hover {
+  color: var(--tech-nav-link);
+}
+
+.info-section .social a:active {
+  color: white;
+} */
+
+body {
+  font-family: 'Nunito';
+  letter-spacing: 0.0625em;
+  color: white;
+}
+
+a {
+  color: var(--tech-green);
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  color: var(--tech-active-green);
+}
+
+.bg-black {
+  background-color: var(--tech-black) !important;
+}
+
+.bg-primary {
+  background-color: var(--tech-green) !important;
+}
+
+.text-primary {
+  color: var(--tech-green) !important;
+}
+
+footer {
+  padding: 5rem 0;
+}
+
+@media (width <= 1200px) {
+  .masthead h1 {
+    font-size: 7rem;
+  }
+  .realestate h1 {
+    font-size: 7rem;
+  }
+  .music h1 {
+    font-size: 7rem;
+  }
+  .wedding h1 {
+    font-size: 7rem;
+  }
+}
+
+@media (width <= 1000px) {
+  .masthead h1 {
+    font-size: 5rem;
+  }
+  .realestate h1 {
+    font-size: 5rem;
+  }
+  .music h1 {
+    font-size: 5rem;
+  }
+  .wedding h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (width <= 768px) {
+  .masthead h1 {
+    font-size: 3.7rem;
+  }
+  .realestate h1 {
+    font-size: 3.7rem;
+  }
+  .music h1 {
+    font-size: 3.7rem;    
+  }
+  .wedding h1 {
+    font-size: 3.7rem;
+  }
+}
+
+@media (width <= 576px) {
+  .masthead h1 {
+    font-size: 2.5rem;
+  }
+  .realestate h1 {
+    font-size: 2.5rem;
+  }
+  .music h1 {
+    font-size: 2.5rem;
+  }
+  .wedding h1 {
+    font-size: 2.5rem;
+  }
+}
+
+
+#mainNav {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  background-color: transparent;
+  transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+#mainNav .navbar-brand {
+  padding: .5rem 0;
+  color: var(--tech-nav-link);
+  transition: color 1s ease, padding 1s ease;
+}
+
+#mainNav .nav-link {
+  transition: color 1s ease, padding 1s ease;
+  padding: 2rem 1.5rem;
+  color: var(--tech-nav-link);
+}
+
+#mainNav .nav-link:hover {
+  color: var(--tech-nav-link-hover);
+}
+
+#mainNav .nav-link:active {
+  color: white;
+}
+
+#mainNav.navbar-shrink {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%);
+  -webkit-backdrop-filter: saturate(120%) blur(6px);
+  backdrop-filter: saturate(120%) blur(6px);
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.06);
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+  color: var(--tech-black);
+}
+
+#mainNav.navbar-shrink .nav-link {
+  color: var(--tech-black);
+  /* keep same vertical spacing so text doesn't shift */
+  padding: 2rem 1.5rem;
+  border-bottom: 0.25rem solid transparent;
+  transition: color 1s ease;
+}
+
+#mainNav.navbar-shrink .nav-link:hover {
+  color: var(--tech-green);
+}
+
+#mainNav.navbar-shrink .nav-link:active {
+  color: var(--tech-active-green);
+}
+
+#mainNav.navbar-shrink .nav-link.active {
+  color: var(--tech-green);
+  outline: none;
+  border-bottom: 0.25rem solid var(--tech-green);
+}
+
+  /* .masthead {
+    height: 100vh;
+    padding: 0;
+  }
+
+  .masthead h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+
+  .masthead h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+
+  .projects-section .featured-text {
+    padding: 0 0 0 2rem;
+    border-left: 0.5rem solid var(--tech-green);
+  }
+
+  .projects-section .project-text {
+    padding: 5rem;
+  }
+
+  .projects-section .project-text hr {
+    border-color: var(--tech-green);
+    border-width: .25rem;
+    width: 30%;
+  }
+} */
+
+/* Utility: place a blurred colored background behind inline text
+.text-behind {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0.125rem 0.5rem;
+}
+
+.text-behind::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  filter: blur(10px);
+  border-radius: 6px;
+  z-index: 0;
+  pointer-events: none;
+} */
+
+/* Full-page scroll snapping and smooth auto-scroll */
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Snap on headers and sections */
+header, section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+}
+
+#realestate, #music, #wedding {
+  scroll-padding-top: 5rem;
+}
+
