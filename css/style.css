@@ -407,10 +407,6 @@ a:focus, a:hover {
   background-color: var(--tech-green) !important;
 }
 
-/* .text-primary {
-  color: var(--tech-nav-link);
-} */
-
 footer {
   padding: 5rem 0;
 }
@@ -476,6 +472,7 @@ header, section {
   }
   .masthead h1 {
     font-size: 3.7rem;
+    letter-spacing: .5rem;
   }
   .realestate h1 {
     font-size: 3.7rem;
@@ -514,13 +511,24 @@ header, section {
   .about-section p {
     font-size: 1.25rem;
   }
-}
+
+  .info-section hr, 
+  .info-section p {
+    display: none;
+  }
+  .info-section {
+    .card-body {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+  }
 
 /* Center the about card vertically within its full-height section */
-#about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+    #about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 4rem 0;
+    }
 }
