@@ -8,15 +8,20 @@
   --faded-white: fade(white, 80%);
 }
 
+/* -------------------- Navigation -------------------- */
 #mainNav {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
   background-color: transparent;
+  transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 
 #mainNav .navbar-toggler {
   font-size: 100%;
-  padding: 0.75rem;
-  color: var(--tech-green);
-  border: 1px solid var(--tech-green);
+  padding: 0rem;
+  color: var(--tech-nav-link);
+  border: none;
 }
 
 #mainNav .navbar-toggler:focus {
@@ -24,15 +29,30 @@
 }
 
 #mainNav .navbar-brand {
-  color: var(--tech-black);
+  padding: .5rem 0;
+  color: var(--tech-nav-link);
   font-weight: 300;
   letter-spacing: 0.5rem;
-  /* padding: .9rem 0; */
   font-family: 'Mulish', sans-serif;
+  transition: color 1s ease, padding 1s ease;
+}
+
+#mainNav .nav-link {
+  transition: color 1s ease, padding 1s ease;
+  padding: 0.5rem;
+  color: var(--tech-nav-link);
+  text-transform: uppercase;
+}
+
+#mainNav .nav-link:hover {
+  color: var(--tech-nav-link-hover);
+}
+
+#mainNav .nav-link:active {
+  color: white;
 }
 
 #mainNav .navbar-nav .nav-item:hover {
-  color: var(--faded-white);
   outline: none;
   background-color: transparent;
 }
@@ -40,6 +60,68 @@
 #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
   outline: none;
   background-color: transparent;
+}
+
+/* shrink state for scrolled navbar */
+#mainNav.navbar-shrink {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%);
+  -webkit-backdrop-filter: saturate(120%) blur(6px);
+  backdrop-filter: saturate(120%) blur(6px);
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.06);
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+  color: var(--tech-black);
+}
+
+#mainNav.navbar-shrink .nav-link {
+  color: var(--tech-black);
+  padding: 0;
+  border-bottom: 0.25rem solid transparent;
+  transition: color 1s ease;
+}
+
+#mainNav.navbar-shrink .nav-link:hover {
+  color: var(--tech-green);
+}
+
+#mainNav.navbar-shrink .nav-link:active {
+  color: var(--tech-active-green);
+}
+
+#mainNav.navbar-shrink .nav-link.active {
+  color: var(--tech-green);
+  outline: none;
+  border-bottom: 0.25rem solid var(--tech-green);
+}
+
+/* Dropdown: background only behind text */
+#mainNav .dropdown-menu {
+  min-width: 0;
+  width: auto;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#mainNav .dropdown-item {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: .25rem;
+}
+
+#mainNav .dropdown-item:hover,
+#mainNav .dropdown-item:focus {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
 }
 
 .logo-width {
@@ -50,6 +132,7 @@
   max-width: 75px;
 }
 
+/* -------------------- Headers / Hero sections -------------------- */
 .masthead, .realestate, .music, .wedding {
   position: relative;
   width: 100%;
@@ -62,7 +145,6 @@
   background-attachment: scroll;
   background-size: cover;
 }
-
 
 .masthead.success {
   background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/michael-bourgault-wV1gNxqelfk-unsplash.jpg");
@@ -108,8 +190,8 @@
   font-size: 1.3rem;
 }
 
+/* Buttons */
 .btn {
-  /* box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important; */
   padding: 1.25rem 2rem;
   font-family: 'Montserrat', sans-serif;
   font-size: 80%;
@@ -121,11 +203,6 @@
 
 .btn-primary {
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0.602), rgba(255, 255, 255, 0.094));
-  /* -webkit-text-fill-color: transparent; */
-}
-
-.btn-primary:hover {
-  /* background-color: white; */
 }
 
 .btn-primary:focus {
@@ -137,11 +214,7 @@
   background-color: var(--tech-green) !important;
 }
 
-/* .chevron {
-  position: absolute;
-  bottom: 0px;
-} */
-
+/* Chevron animation (used in headers) */
 #chevron {
   position: absolute;
   bottom: 20px;
@@ -152,6 +225,21 @@
   cursor: pointer;
   animation: bounce 2s 3;
 }
+
+/* generic chevron used by multiple sections */
+.chevron {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 50;
+}
+
+.chevron i { display: inline-block; }
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -165,7 +253,7 @@
   }
 }
 
-
+/* Services (commented out in HTML) */
 .services-section {
   padding-top: 5rem;
   padding-bottom: 7rem;
@@ -173,14 +261,14 @@
 }
 
 .services-section .card,
-.success .card
- {
+.success .card {
   border: 0;
   border-bottom: 0.25rem solid var(--tech-green);
   background-color: var(--tech-black);
   color: var(--tech-nav-link);
 }
 
+/* Projects */
 .projects-section {
   padding: 7rem 0;
 }
@@ -194,6 +282,7 @@
   font-size: 90%;
 }
 
+/* About (commented) */
 /* .about-section {
   padding: 7rem 0;
   background: linear-gradient(to top, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
@@ -206,6 +295,7 @@
   color: var(--tech-nav-link);
 } */
 
+/* Contact Section */
 .contact-section {
   padding: 10rem 0;
   font-family: 'Mulish', sans-serif;
@@ -214,12 +304,15 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  position: relative;
 }
 
 .contact-section h2 {
-  font-size: 1.25rem;
-  color: var(--faded-white);
+  font-size: 1.75rem;
+  color: var(--tech-nav-link);
   font-family: 'Mulish', sans-serif;
+  font-weight: 300;
+  letter-spacing: .5rem;
 }
 
 .contact-section .form-inline input {
@@ -231,15 +324,24 @@
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   border: 0;
+  background-color: -webkit-linear-gradient(rgba(255, 255, 255, 0.602), rgba(255, 255, 255, 0.094));
 }
 
+.contact-section .form-control {
+    background-color: var(--tech-nav-link);
+    border: none;
+    color: var(--tech-black);
+}
+
+/* Info Section (cards) */
 .info-section {
   padding: 5rem 5rem 0;
 }
 
 .info-section .card {
   border: 0;
-  /* border-bottom: 0.25rem solid var(--tech-green); */
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.602), rgba(255, 255, 255, 0.094));
+  /* columns: var(--tech-nav-link); */
 }
 
 .info-section .card h4 {
@@ -249,47 +351,52 @@
   letter-spacing: 0.15rem;
 }
 
-.info-section .card hr {
-  /* border-color: var(--tech-green); */
-  border-width: 0.25rem;
-  width: 3rem;
+.info-section a {
+  color: var(--tech-black);
 }
 
-/* .info-section .social {
-  margin-top: 5rem;
+
+.about-section {
+  padding: 5rem 5rem 0;
 }
 
-.info-section .social a {
-  text-align: center;
-  height: 3rem;
-  width: 3rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 100%;
-  line-height: 3rem;
-  color: rgba(255, 255, 255, 0.3);
+.about-section .card {
+  border: 0;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.602), rgba(255, 255, 255, 0.094));
+  /* columns: var(--tech-nav-link); */
 }
 
-.info-section .social a:hover {
-  color: var(--tech-nav-link);
+.about-section .card h4 {
+  font-size: 3rem;
+  font-family: 'Mulish', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-weight: 200;
 }
 
-.info-section .social a:active {
-  color: white;
-} */
+.about-section a {
+  color: var(--tech-black);
+}
 
+.about-section p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.9rem;
+font-weight: 200;
+}
+
+/* Site-wide styles */
 body {
-  font-family: 'Nunito';
+  font-family: 'Mulish', sans-serif;
   letter-spacing: 0.0625em;
-  color: white;
 }
 
-a {
-  color: var(--tech-green);
+a h4 p i {
+    color: var(--tech-nav-link);
 }
 
 a:focus, a:hover {
   text-decoration: none;
-  color: var(--tech-active-green);
+  color: var(--tech-nav-link-hover);
 }
 
 .bg-black {
@@ -300,186 +407,13 @@ a:focus, a:hover {
   background-color: var(--tech-green) !important;
 }
 
-.text-primary {
-  color: var(--tech-green) !important;
-}
+/* .text-primary {
+  color: var(--tech-nav-link);
+} */
 
 footer {
   padding: 5rem 0;
 }
-
-@media (width <= 1200px) {
-  .masthead h1 {
-    font-size: 7rem;
-  }
-  .realestate h1 {
-    font-size: 7rem;
-  }
-  .music h1 {
-    font-size: 7rem;
-  }
-  .wedding h1 {
-    font-size: 7rem;
-  }
-}
-
-@media (width <= 1000px) {
-  .masthead h1 {
-    font-size: 5rem;
-  }
-  .realestate h1 {
-    font-size: 5rem;
-  }
-  .music h1 {
-    font-size: 5rem;
-  }
-  .wedding h1 {
-    font-size: 5rem;
-  }
-}
-
-@media (width <= 768px) {
-  .masthead h1 {
-    font-size: 3.7rem;
-  }
-  .realestate h1 {
-    font-size: 3.7rem;
-  }
-  .music h1 {
-    font-size: 3.7rem;    
-  }
-  .wedding h1 {
-    font-size: 3.7rem;
-  }
-}
-
-@media (width <= 576px) {
-  .masthead h1 {
-    font-size: 2.5rem;
-  }
-  .realestate h1 {
-    font-size: 2.5rem;
-  }
-  .music h1 {
-    font-size: 2.5rem;
-  }
-  .wedding h1 {
-    font-size: 2.5rem;
-  }
-}
-
-
-#mainNav {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-  background-color: transparent;
-  transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out;
-}
-
-#mainNav .navbar-brand {
-  padding: .5rem 0;
-  color: var(--tech-nav-link);
-  transition: color 1s ease, padding 1s ease;
-}
-
-#mainNav .nav-link {
-  transition: color 1s ease, padding 1s ease;
-  padding: 2rem 1.5rem;
-  color: var(--tech-nav-link);
-}
-
-#mainNav .nav-link:hover {
-  color: var(--tech-nav-link-hover);
-}
-
-#mainNav .nav-link:active {
-  color: white;
-}
-
-#mainNav.navbar-shrink {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%);
-  -webkit-backdrop-filter: saturate(120%) blur(6px);
-  backdrop-filter: saturate(120%) blur(6px);
-  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.06);
-}
-
-#mainNav.navbar-shrink .navbar-brand {
-  color: var(--tech-black);
-}
-
-#mainNav.navbar-shrink .nav-link {
-  color: var(--tech-black);
-  /* keep same vertical spacing so text doesn't shift */
-  padding: 2rem 1.5rem;
-  border-bottom: 0.25rem solid transparent;
-  transition: color 1s ease;
-}
-
-#mainNav.navbar-shrink .nav-link:hover {
-  color: var(--tech-green);
-}
-
-#mainNav.navbar-shrink .nav-link:active {
-  color: var(--tech-active-green);
-}
-
-#mainNav.navbar-shrink .nav-link.active {
-  color: var(--tech-green);
-  outline: none;
-  border-bottom: 0.25rem solid var(--tech-green);
-}
-
-  /* .masthead {
-    height: 100vh;
-    padding: 0;
-  }
-
-  .masthead h1 {
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-  }
-
-  .masthead h2 {
-    max-width: 30rem;
-    font-size: 1.25rem;
-  }
-
-  .projects-section .featured-text {
-    padding: 0 0 0 2rem;
-    border-left: 0.5rem solid var(--tech-green);
-  }
-
-  .projects-section .project-text {
-    padding: 5rem;
-  }
-
-  .projects-section .project-text hr {
-    border-color: var(--tech-green);
-    border-width: .25rem;
-    width: 30%;
-  }
-} */
-
-/* Utility: place a blurred colored background behind inline text
-.text-behind {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
-  padding: 0.125rem 0.5rem;
-}
-
-.text-behind::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  filter: blur(10px);
-  border-radius: 6px;
-  z-index: 0;
-  pointer-events: none;
-} */
 
 /* Full-page scroll snapping and smooth auto-scroll */
 html, body {
@@ -503,3 +437,90 @@ header, section {
   scroll-padding-top: 5rem;
 }
 
+@media (width <= 1200px) {
+  .masthead h1 {
+    font-size: 7rem;
+  }
+  .realestate h1 {
+    font-size: 7rem;
+  }
+  .music h1 {
+    font-size: 7rem;
+  }
+  .wedding h1 {
+    font-size: 7rem;
+  }
+}
+
+@media (width <= 1000px) {
+    #mainNav .nav-link{
+    padding: 0rem;
+  }
+  .masthead h1 {
+    font-size: 5rem;
+  }
+  .realestate h1 {
+    font-size: 5rem;
+  }
+  .music h1 {
+    font-size: 5rem;
+  }
+  .wedding h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (width <= 768px) {
+  #mainNav .nav-link{
+    padding: 0rem;
+  }
+  .masthead h1 {
+    font-size: 3.7rem;
+  }
+  .realestate h1 {
+    font-size: 3.7rem;
+  }
+  .music h1 {
+    font-size: 3.7rem;    
+  }
+  .wedding h1 {
+    font-size: 3.7rem;
+  }
+  .about-section p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (width <= 576px) {
+    #mainNav .nav-link{
+    padding: 0rem;
+  }
+  .masthead h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  .realestate h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  .music h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  .wedding h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  .about-section p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Center the about card vertically within its full-height section */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 0;
+}

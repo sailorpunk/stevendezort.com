@@ -87,10 +87,10 @@
     <div class="container">
       <a class="navbar-brand js-scroll-trigger logo-width" href="#">
         <!-- <img src= placeholder alt="techWorks" loading="lazy"> -->
-        SD Studios
+        SD STUDIOS
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
+      
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -108,9 +108,9 @@
             <a class="nav-link js-scroll-trigger text-right" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-right" href="#info">About</a>
+            <a class="nav-link js-scroll-trigger text-right" href="#about">About</a>
           </li>
-            <a class="nav-link js-scroll-trigger text-right" href="https://www.instagram.com/sd_studios_mt/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a class="nav-link js-scroll-trigger text-right" href="#info"><i class="fab fa-instagram"></i></a>
           </li>
 
         </ul>
@@ -313,8 +313,7 @@
         <div class="col-md-10 col-lg-8 mx-auto text-center">
 
           <div class="d-inline-flex">
-            <i class="far fa-paper-plane fa-2x mb-2 mr-3 text-white"></i>
-            <h2 class="text-white mb-5">Contact Us</h2>
+            <h2 class="mb-5">CONTACT</h2>
           </div>
 
           <form action="/form-success.html" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
@@ -343,13 +342,33 @@
   </section>
   <!-- End Contact Section -->
 
+
+  <!-- About Section (moved from Info) -->
+  <section id="about" class="about-section info-section bg-black">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="card py-10 pt-md-10 h-100">
+            <div class="card-body text-center">
+              <h4 class="text-uppercase m-0">About</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">
+                <p>Professional videography and editing services are offered across Real Estate, Music, Weddings, and Corporate projects. Our services encompass event coverage, promotional films, drone cinematography, color grading, sound design, motion graphics, social media edits, and comprehensive post-production. Deliverables are meticulously crafted to suit websites, broadcast, and social platforms, ensuring your story is effectively showcased and conveyed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Info Section -->
   <section id="info" class="info-section bg-black">
     <div class="container">
 
       <div class="row">
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
+        <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+          <div class="card py-0 py-lg-4 h-100">
             <div class="card-body text-center">
               <i class="fas fa-map-marked-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Location</h4>
@@ -359,34 +378,34 @@
           </div>
         </div>
 
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Email</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">
-                <a href="mailto:contact@stevendezort.com" target="_blank">contact@stevendezort.com</a>
+        <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+          <a href="mailto:contact@stevendezort.com" target="_blank">
+            <div class="card py-0 py-lg-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-envelope text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Email</h4>
+                <hr class="my-4">
+                <div class="small text-black-50"><p>contact@stevendezort.com</p></div>
               </div>
-            </div>
           </div>
         </div>
 
-        <div class="col-md-3 mb-3 mb-md-0">
+        <div class="col-12 col-lg-3 mb-4 mb-lg-0">
           <a href="tel:971-280-2730">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Phone</h4>
-              <hr class="my-4">
-              <div class="small text-black-50"><p>971-280-2730</p></div>
+            <div class="card py-0 py-lg-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Phone</h4>
+                <hr class="my-4">
+                <div class="small text-black-50"><p>971-280-2730</p></div>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
         </div>
-        <div class="col-md-3 mb-3 mb-md-0">
+
+        <div class="col-12 col-lg-3 mb-4 mb-lg-0">
           <a href="https://www.instagram.com/sd_studios_mt/" target="_blank">
-          <div class="card py-4 h-100">
+          <div class="card py-0 py-lg-4 h-100">
             <div class="card-body text-center">
               <i class="fab fa-instagram text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Instagram</h4>
@@ -397,6 +416,7 @@
         </a>
         </div>
       </div>
+      <!-- removed: about/services card (moved to standalone #about section) -->
       <!-- <div class="social d-flex justify-content-center">
         <a href="#" class="mx-2">
           <i class="fab fa-twitter"></i>
@@ -450,7 +470,7 @@
   <!-- Custom scripts for this template -->
   <script src="js/script.js" defer></script>
 
-  <script>
+  <!-- <script>
     // Attach click/keyboard handlers to chevron icons (they are plain icons, not anchors)
     (function() {
       // keep a CSS var up-to-date with the navbar height so CSS `scroll-margin-top` works
@@ -482,6 +502,6 @@
         });
       });
     })();
-  </script>
+  </script> -->
 </body>
 </html>
