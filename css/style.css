@@ -376,6 +376,9 @@
 
 .about-section a {
   color: var(--tech-black);
+  font-size: 2rem;
+  text-transform: uppercase;
+  border: #161616 0.25rem solid transparent;
 }
 
 .about-section p {
