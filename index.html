@@ -79,6 +79,8 @@
   }
   </script>
   <script src="https://kit.fontawesome.com/2fa6badf24.js" crossorigin="anonymous"></script>
+  <script src="vendor/jquery-4.0.0.min.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body id="home-page">
@@ -86,7 +88,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger logo-width" href="#">
+      <a class="navbar-brand logo-width" href="#">
         <!-- <img src= placeholder alt="techWorks" loading="lazy"> -->
         SD STUDIOS
       </a>
@@ -97,21 +99,21 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-right" href="#realestate">Real Estate</a>
+            <a class="nav-link text-right" href="#realestate">Real Estate</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-right" href="#music">Music</a>
+            <a class="nav-link text-right" href="#music">Music</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-right" href="#wedding">Weddings</a>
+            <a class="nav-link text-right" href="#wedding">Weddings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-right" href="#contact">Contact</a>
+            <a class="nav-link text-right" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger text-right" href="#about">About</a>
+            <a class="nav-link text-right" href="#about">About</a>
           </li>
-            <a class="nav-link js-scroll-trigger text-right" href="#info"><i class="fab fa-instagram"></i></a>
+            <a class="nav-link text-right" href="#info"><i class="fab fa-instagram"></i></a>
           </li>
 
         </ul>
@@ -467,48 +469,6 @@ Let’s work together to showcase your story with high-end visuals that truly ge
   </footer> -->
   <!-- End Footer -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery.min.js"></script>
-  <script src="vendor/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/script.js" defer></script>
-
-  <!-- <script>
-    // Attach click/keyboard handlers to chevron icons (they are plain icons, not anchors)
-    (function() {
-      // keep a CSS var up-to-date with the navbar height so CSS `scroll-margin-top` works
-      function updateNavOffset() {
-        const navbar = document.querySelector('.navbar');
-        const h = navbar ? navbar.offsetHeight : 0;
-        document.documentElement.style.setProperty('--nav-offset', h + 'px');
-      }
-      window.addEventListener('load', updateNavOffset);
-      window.addEventListener('resize', updateNavOffset);
-      updateNavOffset();
-
-      const chevrons = Array.from(document.querySelectorAll('.chevron'));
-      if (!chevrons.length) return;
-      const sections = Array.from(document.querySelectorAll('header, section'));
-
-      chevrons.forEach(btn => {
-        btn.setAttribute('role', 'button');
-        btn.setAttribute('tabindex', '0');
-        btn.addEventListener('click', () => {
-          const current = btn.closest('header, section');
-          if (!current) return;
-          const idx = sections.indexOf(current);
-          const next = sections[idx + 1];
-          if (next) next.scrollIntoView({ behavior: 'smooth' });
-        });
-        btn.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
-        });
-      });
-    })();
-  </script> -->
+  
 </body>
 </html>

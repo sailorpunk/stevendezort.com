@@ -214,44 +214,6 @@
   background-color: var(--tech-green) !important;
 }
 
-/* Chevron animation (used in headers) */
-#chevron {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2em;
-  color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  animation: bounce 2s 3;
-}
-
-/* generic chevron used by multiple sections */
-.chevron {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2em;
-  color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  z-index: 50;
-}
-
-.chevron i { display: inline-block; }
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-      transform: translateX(-50%) translateY(0);
-  }
-  40% {
-      transform: translateX(-50%) translateY(-20px);
-  }
-  60% {
-      transform: translateX(-50%) translateY(-15px);
-  }
-}
 
 /* Services (commented out in HTML) */
 .services-section {
@@ -414,22 +376,28 @@ footer {
   padding: 5rem 0;
 }
 
-/* Full-page scroll snapping and smooth auto-scroll */
-html, body {
-  height: 100%;
+html {
+  /* Tells the browser to snap on the Y (vertical) axis */
+  /* 'mandatory' forces it to always rest on a snap point */
+  scroll-snap-type: y mandatory; 
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  overflow-y: scroll; /* Ensures the body is the scrollable element */
 }
 
+
 /* Snap on headers and sections */
-header, section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+.masthead, .realestate, .music, .wedding, .services-section, .projects-section, .about-section, .info-section, .contact-section {
+  scroll-behavior: smooth;
   min-height: 100vh;
+  /* This creates the actual snap effect */
+  scroll-snap-align: start; 
+  /* Prevents getting stuck halfway if content is taller than viewport */
+  scroll-snap-stop: always; 
 }
 
 #realestate, #music, #wedding {
